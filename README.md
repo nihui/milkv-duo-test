@@ -34,6 +34,8 @@ make install
 
 1. 1920x1080 90/270旋转图像有区域内容错误
 
+<img src="https://github.com/nihui/milkv-duo-test/blob/master/out/1920x1080.jpg.5.jpg?raw=true" width="400">
+<img src="https://github.com/nihui/milkv-duo-test/blob/master/out/1920x1080.jpg.8.jpg?raw=true" width="400">
 
 2. 很多分辨率的图片解码失败，尤其是 milkv-duo 运行时间长之后或多次失败，再次运行导致失败率大幅上升，主要错误在 vpss旋转/转rgb c006800e c0068003 两种
 
@@ -74,4 +76,4 @@ decode failed 1080x1080.jpg 1
 
 3. CVI_SYS_Bind 将vdec和vpss自动串起来不起作用，CVI_VPSS_GetChnFrame 超时失败
 
-
+4. vpss 似乎总是会用 common vb pool，即便我已经 attach 自己的 vbpool，common 不够大依然会失败
