@@ -30,6 +30,8 @@ make install
 10. 清理 vpss vdec vbpool
 11. stb存出结果图像
 
+因为vpss不支持rgb旋转，所以只能额外使用单独的vpss，先在nv12上旋转，再转rgb
+
 # 发现的问题
 
 1. 1920x1080 90/270旋转图像有区域内容错误
