@@ -6,7 +6,9 @@
 ```
 export RISCV_ROOT_PATH=/home/nihui/osd/host-tools/gcc/riscv64-linux-musl-x86_64
 
-cmake -DCMAKE_TOOLCHAIN_FILE=../riscv64-unknown-linux-musl.toolchain.cmake -DCMAKE_BUILD_TYPE=Release ..
+mkdir build
+cd build
+cmake -DCMAKE_TOOLCHAIN_FILE=../riscv64-unknown-linux-musl.toolchain.cmake ..
 make
 $RISCV_ROOT_PATH/bin/riscv64-unknown-linux-musl-strip testmilkv
 make install
