@@ -6,9 +6,9 @@
 ```
 export RISCV_ROOT_PATH=/home/nihui/osd/host-tools/gcc/riscv64-linux-musl-x86_64
 
-cmake -DCMAKE_TOOLCHAIN_FILE=../../toolchains/riscv64-unknown-linux-musl.toolchain.cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake -DCMAKE_TOOLCHAIN_FILE=../riscv64-unknown-linux-musl.toolchain.cmake -DCMAKE_BUILD_TYPE=Release ..
 make
-/home/nihui/osd/host-tools/gcc/riscv64-linux-musl-x86_64/bin/riscv64-unknown-linux-musl-strip testmilkv
+$RISCV_ROOT_PATH/bin/riscv64-unknown-linux-musl-strip testmilkv
 make install
 ```
 3. 由于rpath原因，需要 install 后把 install/bin/testmilkv 拷贝到 milkv-duo 上运行，否则会找不到 libvdec.so 等等...
